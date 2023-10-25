@@ -10,6 +10,16 @@ const AddTodo: React.FC<IAddTodo> = ({ onTodoAdd }) => {
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
 
+    if (text.length < 1) {
+      alert("Input must be at least 1 character long.");
+      return;
+    }
+
+    if (text.length > 20) {
+      alert("Input cannot be longer than 10 characters.");
+      return;
+    }
+
     onTodoAdd(text);
 
     setText("");
@@ -17,13 +27,22 @@ const AddTodo: React.FC<IAddTodo> = ({ onTodoAdd }) => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <input
-        type="text"
-        value={text}
-        onChange={(e) => setText(e.target.value)}
-      />
-
-      <button type="submit">Add</button>
+      <div className="col-3">
+        <input
+          className="effect-8"
+          type="text"
+          value={text}
+          onChange={(e) => setText(e.target.value)}
+        />
+        <span className="focus-border">
+          <i></i>
+        </span>
+      </div>
+      <div>
+        <button className="add" type="submit">
+          Add
+        </button>
+      </div>
     </form>
   );
 };

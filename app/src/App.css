@@ -1,42 +1,110 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+body {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  background-color: #fde5ec;
+  color: black;
+}
+.strikethrough {
+  text-decoration: line-through;
+}
+.app {
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.add,
+.delete,
+.edit {
+  margin-top: 20px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  letter-spacing: 2px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #000;
+  cursor: pointer;
+  border: 3px solid;
+  padding: 0.25em 0.5em;
+  box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px,
+    5px 5px 0px 0px;
+  position: relative;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+.add:active {
+  box-shadow: 0px 0px 0px 0px;
+  top: 5px;
+  left: 5px;
+}
+
+@media (min-width: 768px) {
+  .button-54 {
+    padding: 0.25em 0.75em;
   }
-  to {
-    transform: rotate(360deg);
-  }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.delete {
+  margin: 26px;
 }
-
-.card {
-  padding: 2em;
+.total {
+  font-size: 20px;
+  letter-spacing: 2px;
 }
-
-.read-the-docs {
-  color: #888;
+input[type="text"] {
+  font: 15px/24px "Lato", Arial, sans-serif;
+  color: #333;
+  box-sizing: border-box;
+  letter-spacing: 1px;
+  width: 300px;
+}
+:focus {
+  outline: none;
+}
+.col-3 {
+  width: 300px;
+  margin: 40px auto;
+  position: relative;
+}
+.effect-8 ~ .focus-border:before,
+.effect-8 ~ .focus-border:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 2px;
+  background-color: #4c75af;
+  transition: 0.3s;
+}
+.effect-8 ~ .focus-border:after {
+  top: auto;
+  bottom: 0;
+  left: auto;
+  right: 0;
+}
+.effect-8 ~ .focus-border i:before,
+.effect-8 ~ .focus-border i:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2px;
+  height: 0;
+  background-color: #3218de;
+  transition: 0.4s;
+}
+.effect-8 ~ .focus-border i:after {
+  left: auto;
+  right: 0;
+  top: auto;
+  bottom: 0;
+}
+.effect-8:focus ~ .focus-border:before,
+.effect-8:focus ~ .focus-border:after {
+  width: 100%;
+  transition: 0.3s;
+}
+.effect-8:focus ~ .focus-border i:before,
+.effect-8:focus ~ .focus-border i:after {
+  height: 100%;
+  transition: 0.4s;
 }

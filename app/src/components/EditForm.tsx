@@ -14,6 +14,7 @@ const Card: React.FC<ICard> = ({ handleSaveClick, item }) => {
         value={updatedTitle}
         onChange={(e) => setUpdatedTitle(e.target.value)}
       />
+
       <button onClick={() => handleSaveClick(item.id, updatedTitle)}>
         Save
       </button>
